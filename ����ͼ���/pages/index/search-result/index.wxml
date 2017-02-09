@@ -1,0 +1,42 @@
+<!--pages/index/search-result/index.wxml-->
+<import src="../../template/layer.wxml"/>
+<view class="page">
+    <template  is="layer" data="{{...layerinfo}}" />
+    <loading hidden="{{loadingHidden}}">
+        加载中...
+    </loading>
+    <view class="search_area">
+      <input auto-focus="true" bindinput="bindInputSearch" bindconfirm="startSearch" value="{{search_param.q}}" class="search_input" placeholder="请输入搜索内容"/>
+      <image src="../../../image/zfb_icoss.png" mode="scaleToFill" bindtap="startSearch"></image>
+    </view>
+    <view class="history-container" hidden="{{historyHidden}}">
+      <view class="history-list"  wx:for="{{historyList}}" wx:for-index="id" bindtap="chooseHistory" data-historykey="{{item.name}}">
+          <view class="history-list-item">
+              {{item.name}}
+          </view>
+          <view class="history-list-clear" data-historykey="{{id}}" catchtap="clearHistory" >
+              <icon type="clear" size="16"></icon>
+          </view>
+      </view>
+    </view>
+    <view class="result-list">
+      <block wx:for-items="{{bookList}}" wx:for-item="item">
+        <navigator url="/pages/index/book-detail/index?bookrecno={{item.bookrecno}}">
+           <view class="result-item">
+              <view class="cover">
+                <image src="{{item.cover}}"></image>
+              </view>
+              <view class="book-info">
+                <view class="book-name"><text>{{item.title}}</text></view>
+                <view class="book-author"><text>著者 : {{item.author}}</text></view>
+                <view class="book-publisher"><text>出版社 : {{item.publisher}}</text></view>
+                <view class="book-isbn"><text>ISBN : {{item.isbn}}</text></view>
+              </view>
+          </view>
+        </navigator>
+    </block>
+     <view hidden="{{hiddenBottom}}" class="bottom-tip">
+      <text>到底了</text>
+    </view>
+    </view>
+</view>

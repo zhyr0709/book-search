@@ -1,0 +1,35 @@
+/* pages/index/advance-search/index.wxss */
+.item_head{
+    margin:20rpx;
+    color: #999;
+    font-size: 24rpx;
+}
+.radio{
+    margin-right:40rpx;
+}
+.item picker,.item radio-group{
+    padding: 20rpx 30rpx;
+    background-color:#fff;
+}
+.item picker view{
+    position:relative;
+}
+.option-item{
+    margin-left:8rpx;
+}
+.widget__arrow{
+    position:absolute;
+    top:4rpx;
+    right:0;
+    width:32rpx;
+    height:32rpx;
+    transform:rotate(90deg);
+}
+.search_input-view{
+    height:88rpx;
+    width:90%;
+    background:#fff;
+    line-height:88rpx;
+    padding-left:32rpx;
+    color:#666;
+}

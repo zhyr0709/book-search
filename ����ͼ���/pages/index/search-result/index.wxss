@@ -1,0 +1,63 @@
+/* pages/index/search-result/index.wxss */
+.page{
+    padding:20rpx 32rpx;
+}
+.search_area{
+    margin-top:0;
+    margin-bottom:20rpx;
+    width:100%;
+}
+.result-item{
+    padding:8rpx;
+    background-color:#fff;
+    display: flex;
+    margin-bottom:20rpx;
+}
+.result-item .cover{
+    width:140rpx;
+    height: 200rpx;
+}
+.result-item .cover image{
+    width:140rpx;
+    height: 200rpx;
+}
+.result-item .book-info{
+    flex: 1;
+    margin-left:12rpx;
+    overflow: hidden;
+}
+.book-info .book-name{
+    width:100%;
+    font-size: 36rpx;
+    margin-bottom: 16rpx;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.book-info .book-author,
+.book-info .book-publisher,
+.book-info .book-isbn{
+    width:100%;
+    font-size: 32rpx;
+    margin-bottom: 12rpx;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.book-info text{
+    display: block;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+.history-list{
+    border-bottom: 2rpx solid #ccc; 
+    display: flex;
+    justify-content: space-between;
+    padding:20rpx 0;
+}
+.history-list-item{
+    color:#aaa;
+}

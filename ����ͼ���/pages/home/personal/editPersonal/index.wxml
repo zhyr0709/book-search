@@ -1,0 +1,30 @@
+<!--pages/home/personal/editPersonal/index.wxml-->
+<import src="../../../template/layer.wxml"/>
+<view class="page">
+    <template  is="layer" data="{{...layerinfo}}" />
+     <loading hidden="{{loadingHidden}}">
+        正在加载...
+    </loading>
+    <view class="input-container">
+        <block wx:for-items="{{editContent}}" wx:for-item="content">
+            <view class="input-list">
+                <view class="label {{content.label == '地址' ? 'textarea' : ''}}">{{content.label}}</view>
+                <view class="input-area">
+                    <block wx:if="{{content.label == '地址'}}">
+                        <textarea data-cur-index="{{index}}" maxlength="{{maxNum}}" value="{{content.value}}" placeholder="请输入{{content.label}}" bindinput="onTextareaChange"/>
+                        <view class="max-num">
+                            <text>{{remainNum}}</text>
+                        </view>
+                    </block>
+                    <block wx:else>
+                         <input data-cur-index="{{index}}" bindinput="onInputChange" value="{{content.value}}" placeholder="请输入{{content.label}}" />
+                    </block>
+                </view>
+                <view class="{{index < editContent.length-1 ? 'input-line' : ''}}"></view>
+            </view>
+        </block>
+    </view>
+    <view class="submit-btn">
+        <button bindtap="onSubmitPress">确认</button>
+    </view>
+</view>

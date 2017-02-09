@@ -1,0 +1,75 @@
+.page{
+    padding:30rpx;
+}
+.bind-text{
+    text-align: center;
+}
+.bind-title{
+    font-size: 36rpx;
+    color:#000;
+    margin-top:40rpx;
+}
+.bind-desc{
+    margin:40rpx 0;
+    font-size: 32rpx;
+    color:#666;
+}
+.input-item,.submit-btn,.bind-know,.bind-know{
+    width:86%;
+}
+.input-item{
+    margin:20rpx auto;
+}
+.input-item input{
+    background-color:#fff;
+    border:1px solid #eee;
+    border-radius: 8rpx;
+    padding:18rpx 16rpx;
+    font-size: 36rpx;
+}
+.submit-btn{
+    box-sizing:border-box;
+    padding:20rpx;
+    margin:30rpx auto;
+    font-size: 36rpx;
+    background-color: #3EA3FE;
+    border:1px solid #3EA3FE;
+    border-radius: 8rpx;
+    color:#fff;
+    text-align: center;
+}
+.bind-know{
+    position: relative;
+    margin:30rpx auto;
+}
+.bind-know-btn{
+    box-sizing:border-box;
+    padding:20rpx;
+    font-size: 36rpx;
+    border-radius: 8rpx;
+    color:#3EA3FE;
+    border:1px solid #3EA3FE;
+    background-color:#fff;
+    text-align: center;
+    opacity: 0;
+    z-index: -1;
+    transition:all .3s linear;
+}
+.bind-know-btn.showed{
+    opacity: 1;
+    z-index: 1;
+}
+.bind-knowtext{
+    position: absolute;
+    top:0;
+    z-index: -1;
+    margin:0 auto;
+    transform:translateY(30rpx);
+    opacity: 0;
+    transition:all .3s linear;
+}
+.bind-knowtext.showed{
+    z-index: 1;
+    transform:translateY(0);
+    opacity: 1;
+}

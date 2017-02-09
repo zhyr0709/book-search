@@ -1,0 +1,43 @@
+<!--pages/index/book-detail/index.wxml-->
+<import src="../../template/layer.wxml"/>
+<view class="page">
+    <template  is="layer" data="{{...layerinfo}}" />
+    <loading hidden="{{loadingHidden1&&loadingHidden2}}">
+        加载中...
+    </loading>
+    <view class="book-info">
+         <view class="book-img-area">
+            <image src="{{book.image}}"></image>
+        </view>
+        <view class="book-detail">
+            <view class="book-title">{{book.title}}</view>
+            <view>著者：{{book.author}}</view>
+            <view>出版社：{{book.publisher}}</view>
+            <view>出版日期：{{book.pubdate}}</view>
+            <view>文献类型：{{book.subject}}</view>
+            <view>索书号：{{book.classNo}}</view>
+        </view>
+    </view>
+    <view class="book-collec-container">
+        <view class="book-collec-title">馆藏列表</view>
+        <view class="table">
+            <view class="table-th">
+                <view>索书号</view>
+                <view>所在馆</view>
+                <view>所在馆藏地点</view>
+                <view>复本数</view>
+            </view>
+            <block wx:for-items="{{bookCollec}}" wx:key="item">
+            <view class="table-tr">
+                <view>{{item.callno}}</view>
+                <view>{{item.orglib}}</view>
+                <view>{{item.orglocal}}</view>
+                <view>{{item.num}}</view>
+            </view>
+            </block>
+            <view class="table-tr" hidden="{{!noData}}">
+                暂无数据
+            </view>
+        </view>
+    </view>
+</view>

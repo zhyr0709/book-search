@@ -1,0 +1,35 @@
+<import src="../../template/layer.wxml"/>
+<view class="page">
+    <template  is="layer" data="{{...layerinfo}}" />
+    <modal title="提示" confirm-text="确定" cancel-text="取消" hidden="{{modalHidden}}" mask bindconfirm="modalChangeConfirm" bindcancel="modalChangeCancel">
+      您还没有绑定读者证证，是否绑定？
+    </modal>
+    <loading hidden="{{loadingHidden}}">
+        登录中...
+    </loading>
+    <navigator url="{{personal}}" hover-class="navigator-hover">
+        <view class="header">
+            <view class="user-img">
+                <wx-image class="userinfo-avatar"  src="{{userInfo.avatarUrl}}"></wx-image>
+            </view>
+            <view class="user_base_infos">
+                <view>昵称：{{userInfo.nickName}}</view>
+                <view>证号：{{userInfo.readerInfo.rdid}}</view>
+            </view>
+            <view class="qrcode">
+                <image src="{{qrcodeIcon}}"></image>
+            </view>
+        </view>
+    </navigator>
+    <block wx:for-items="{{pages}}" wx:for-item="page">
+        <view class="widgets">
+            <block wx:for-items="{{page}}" wx:for-item="perpage">
+                <navigator url="{{perpage.url}}" class="widget">
+                    <text class="widget__name">{{perpage.name}}</text>
+                    <image class="widget__arrow" src="/image/arrowright.png" mode="aspectFill" />
+                    <view class="{{index < page.length-1 ? 'widget__line' : ''}}"></view>
+                </navigator>
+            </block>
+        </view>
+    </block>
+</view>

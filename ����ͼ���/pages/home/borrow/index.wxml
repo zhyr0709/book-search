@@ -1,0 +1,35 @@
+<import src="../../template/layer.wxml"/>
+<view class="page">
+    <template  is="layer" data="{{...layerinfo}}" />
+    
+    <modal title="提示" confirm-text="确定" cancel-text="取消" hidden="{{modalHidden}}" mask bindconfirm="modalChange" bindcancel="modalChange">
+    {{modalContent}}
+    </modal>
+    <loading hidden="{{loadingHidden}}">
+        正在加载...
+    </loading>
+    <block wx:for-items="{{info}}" wx:for-item="item">
+        <view class="item-container">
+            <view class="item-content">
+                <view class="cover">
+                    <image src="{{item.cover}}"></image>
+                </view>
+                <view class="book-info">
+                    <view class="title">
+                        <text>{{item.title}}</text>
+                    </view>
+                    <view class="borrow-num">
+                        <text class="num">{{item.borrowNum}}</text>人也借阅了这本书
+                    </view>
+                    <view class="borrow-time">{{item.time}}</view>
+                </view>
+            </view>
+            <view data-cur-index="{{index}}" class="renew {{item.isRenew ? 'isrenewed' : ''}}" bindtap="_renew">
+                <text>续借</text>
+            </view>
+        </view>  
+    </block>
+    <view hidden="{{hiddenBottom}}" class="bottom-tip">
+      <text>到底了</text>
+    </view>
+</view>

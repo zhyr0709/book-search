@@ -1,0 +1,55 @@
+<view class="page">
+     <modal title="操作提示" confirm-text="确定" cancle-text="确定" hidden="{{modalHidden}}" mask bindconfirm="modalChange" bindcancel='modalChange'>
+      {{modalContent}}
+    </modal>
+    <!--检索方式-->
+    <view class="item">
+        <view class="item_head">检索方式</view>
+        <picker bindchange="bindSearchWayChange"  range="{{search_way_value}}" value="{{search_way_index}}">
+            <view>
+                当前选择 : <text class="option-item">{{search_way_value[search_way_index]}}</text>
+                <image class="widget__arrow" src="/image/arrowright.png" mode="scaleToFill"></image>
+            </view>
+        </picker>
+    </view>
+    
+    <view class="item">
+        <view class="item_head">匹配方式</view>
+        <radio-group class="radio-group" bindchange="bindScWayChange">
+            <label class="radio" wx:for="{{sc_way}}">
+            <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+            </label>
+        </radio-group>
+    </view>
+     
+    <view class="item">
+        <view class="item_head">排序方式</view>
+        <radio-group class="radio-group" bindchange="sortOrderChange">
+            <label class="radio" wx:for="{{sortOrder}}">
+            <radio value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
+            </label>
+        </radio-group>
+    </view>
+    
+    <view class="item">
+        <view class="item_head">排序类型</view>
+        <picker bindchange="bindsortWayChange"  range="{{sort_way}}" value="{{sort_way_index}}">
+            <view>
+                当前选择 : <text class="option-item">{{sort_way[sort_way_index]}}</text>
+                <image class="widget__arrow" src="/image/arrowright.png" mode="scaleToFill"></image>
+            </view>
+        </picker>
+    </view>
+    <!--<view class="search_button-container">
+        <view class="search_area">
+            <input bindinput="searchKeyInput" bindconfirm="startSearch" class="search_input" placeholder="请输入搜索内容"/>
+            <image bindtap="sartSearch" src="../../../image/zfb_icoss.png"></image>
+        </view>
+    </view>-->
+    <navigator url="../search-result/index?searchWay={{search_way_name[search_way_index]}}&row={{row}}&page={{page}}&sortWay={{sort_way_value[sort_way_index]}}&scWay={{sc_way_name}}&sortOrder={{selectedSortOrder}}" class="search_button-container">
+      <view class="search_area">
+        <view class="search_input-view" >请输入搜索内容</view>
+        <image src="../../../image/zfb_icoss.png" mode="scaleToFill" ></image>
+      </view>
+    </navigator>
+</view>

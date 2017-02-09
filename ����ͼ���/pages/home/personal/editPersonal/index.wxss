@@ -1,0 +1,59 @@
+/* pages/home/personal/editPersonal/index.wxss */
+.input-container{
+    margin-top:30rpx;
+    padding-bottom:40rpx;
+    background-color:#fff;
+}
+.input-list{
+    display: flex;
+    padding:16rpx 40rpx;
+    position: relative;
+}
+.input-list .label{
+    width:180rpx;
+    display: flex;
+    justify-content:flex-start;
+    align-items:center;
+    flex-wrap:nowrap;
+}
+.input-list .label.textarea{
+    width:180rpx;
+    align-items: flex-start;
+}
+.input-list .input-area{
+    flex:1;
+    color:#999;
+    position: relative;
+}
+.input-list .input-area input{
+    height: 48rpx;
+}
+.input-list .input-area textarea{
+    width:100%;
+    line-height: 1.425;
+    height: 180rpx;
+}
+.max-num{
+    position: absolute;
+    right:0;
+    bottom:-40rpx;
+    color:green;
+}
+.input-line{
+    content:' ';
+    height: 2rpx;
+    background-color:#F0F0F0;
+    position:absolute;
+    bottom:0;
+    left:40rpx;
+    right:0;
+}
+.submit-btn{
+    margin-top: 30rpx;
+}
+.submit-btn button{
+    width:90%;
+    background-color:#3EA3FE;
+    color:#fff;
+    margin:0 auto;
+}

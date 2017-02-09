@@ -1,0 +1,23 @@
+<view class="page">
+  <!--首页logo,头像-->
+  <view class="header">
+    <image class="header_logo" src="../../image/xf_indeximg.jpg"></image>
+    <image class="header_head" src="../../image/icon_logo2.png"></image>
+  </view>
+  <!--检索区域-->
+  <view class="search-wrap">
+    <navigator url="./search-result/index?searchWay=title&row=10&page=1&sortWay=score&scWay=desc" class="search_button-container">
+      <view class="search_area">
+        <view class="search_input-view" >请输入搜索内容</view>
+        <image src="../../image/zfb_icoss.png" mode="scaleToFill" ></image>
+      </view>
+    </navigator>
+    <navigator url="./advance-search/index" class="search_button-container">
+      <button class="search_button">高级检索</button>
+    </navigator>
+  </view>
+
+   <modal title="操作提示" confirm-text="确定" cancle-text="取消" hidden="{{modalHidden}}" mask bindconfirm="modalChange" bindcancel='modalChange'>
+      {{modalContent}}
+    </modal>
+</view>

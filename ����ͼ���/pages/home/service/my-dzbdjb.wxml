@@ -1,0 +1,33 @@
+<import src="../../template/layer.wxml"/>
+<view class="page">
+    <template  is="layer" data="{{...layerinfo}}" />
+     <loading hidden="{{loadingHidden}}">
+        加载中...
+    </loading>
+    <view class="bind-text bind-title">
+        <text>读者证解（绑）定</text>
+    </view>
+    <view class="bind-text bind-desc">
+        <text>解绑页面只显示证号，直接点击“解绑”即可</text>
+    </view>
+    <view class="form-list">
+        <view class="input-item">
+            <input name="cid" value="{{rdid}}" bindinput="bindRdid" placeholder="请输入证号"/>
+        </view>
+        <view class="input-item">
+            <input password name="pwd" bindinput="bindPwd" placeholder="请输入密码"/>
+        </view>
+        <view class="submit-btn" bindtap="_bind">
+            <text>绑定/解绑</text>
+        </view>
+    </view>
+    <view class="bind-know">
+        <view class="bind-know-btn {{isShowBzBtn ? 'showed' : ''}}" bindtap="_toggle">
+            <text>绑定须知</text>
+        </view>
+        <view class="bind-knowtext {{isShowBzBtn ? '' : 'showed' }}" bindtap="_toggle">
+            <text>微信用户通过小程序绑定读者证后，可以更加方便地管理个人基本信息、进行图书检索、查看当前借阅、以及图书续借等图书业务操作。由于小程序绑定和微信绑定不同，微信公众号已绑定过读者证号，初次进入小程序还需要再绑定。只要在小程序绑定过读者证（没有解绑），下次进入小程序只需简单授权即可直接使用，无需在小程序再次绑定读者证。</text>
+        </view>
+    </view>
+   
+</view>

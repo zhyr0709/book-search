@@ -1,0 +1,97 @@
+<!--pages/home/personal/index.wxml-->
+<import src="../../template/layer.wxml"/>
+<view class="page">
+    <template  is="layer" data="{{...layerinfo}}" />
+     <loading hidden="{{loadingHidden}}">
+        正在加载...
+    </loading>
+    <view class="header">
+        <view class="user-img">
+            <wx-image class="userinfo-avatar"  src="{{userInfo.avatarUrl}}"></wx-image>
+        </view>
+        <view class="user_base_infos">
+            <view>昵称：{{userInfo.nickName}}</view>
+            <view>证号：{{readerInfo.info.rdid}}</view>
+        </view>
+        <view class="qrcode" bindtap="toggleQR">
+            <image src="{{qrcodeIcon}}" mode="aspectFill"></image>
+        </view>
+    </view>
+
+    <view class="balance {{balance > 0 ? 'positive' : 'negative'}}">
+        <text>逾期费 : {{readerInfo.info.rdDebt}}元</text>
+    </view>
+
+    <view class="widgets">
+        <view class="widget" bindtap="toggleQR">
+            <text class="widget__name">{{qruser.name}}</text>
+            <image class="widget__arrow" src="{{qruser.icon}}" mode="aspectFill" />
+        </view>
+    </view>
+
+    <navigator wx-if="{{readerInfo}}" url="{{readerInfo.url}}" class="widgets">
+        <view  class="widget">  
+            <view class=''>
+                <text class="user-label">姓名 : </text>
+                <text class="user-value">{{readerInfo.info.rdName}}</text>
+            </view>
+            <view class="widget__line__item"></view>
+        </view>
+         <view  class="widget">  
+            <view class=''>
+                <text class="user-label">手机 : </text>
+                <text class="user-value">{{readerInfo.info.rdPhone}}</text>
+            </view>
+            <view class="widget__line__item"></view>
+        </view>
+        <view  class="widget">  
+            <view class=''>
+                <text class="user-label">邮箱 : </text>
+                <text class="user-value">{{readerInfo.info.rdEmail}}</text>
+            </view>
+            <view class="widget__line__item"></view>
+        </view>
+        <view  class="widget">  
+            <view class=''>
+                <text class="user-label">地址 : </text>
+                <text class="user-value">{{readerInfo.info.rdAddress}}</text>
+            </view>
+            <view class="widget__line__item"></view>
+        </view>
+        <view class="widget">  
+            <view class=''>
+                <text class="user-label">图书馆 : </text>
+                <text class="user-value">{{readerInfo.info.rdlibName}}</text>
+            </view>
+            <view class="widget__line__item"></view>
+        </view>
+    </navigator>
+
+    <block wx:for-items="{{pages}}" wx:for-item="page">
+        <view class="widgets">
+            <block wx:for-items="{{page}}" wx:for-item="perpage">
+                <navigator url="{{perpage.url+'?rdid='+readerInfo.info.rdid}}" class="widget">
+                    <text class="widget__name">{{perpage.name}}</text>
+                    <image class="widget__arrow" src="{{perpage.icon}}" mode="aspectFill" />
+                    <view class="{{index < page.length-1 ? 'widget__line' : ''}}"></view>
+                </navigator>
+            </block>
+        </view>
+    </block>
+    <view class="show-qrcode {{showQR ? 'showed' : ''}}" bindtap="toggleQR">
+        <view class="show-qrcode-container">
+            <view class="user-identity">
+                <image src="{{qruser.img}}"></image>
+                <text>{{qruser.identity}}</text>
+            </view>
+            <view class="big-qrcode-wrapper">
+                <view class="big-qrcode">
+                    <image src="{{qruser.icon}}" mode="aspectFill"></image>
+                </view>
+                <view class="qr-tip">
+                    <text>{{qruser.tip}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

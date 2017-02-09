@@ -1,0 +1,65 @@
+/* pages/home/qcode/index.wxss */
+.qrcode-container{
+    position:fixed;
+    top:0;
+    left: 0;
+    height: 100%;
+    width:100%;
+    background-color:#3e9abf;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.qrcode-wrapper{
+    width:80%;
+    height: 75%;
+    background-color: #f6f6f6;
+    border-radius: 10rpx;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.company-logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    height: 126rpx;
+    background-color:#fff;
+}
+.company-logo image{
+    width:390rpx;
+    height: 112rpx;
+    margin-right:10rpx;
+}
+.qrcode-content{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+}
+.qcode{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+.qcode image{
+    width:450rpx;
+    height:450rpx;
+}
+.refresh{
+    height: 80rpx;
+    text-align: center;
+    color:#aaa;
+    font-size: 32rpx;
+}
+.qcode_btn{
+    width:50%;
+    background:#ff6d00;
+    text-align:center;
+    font-size:36rpx;
+    border-radius:999px;
+    line-height:2.1;
+    color:#fff;
+}

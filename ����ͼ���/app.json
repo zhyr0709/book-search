@@ -1,0 +1,52 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/index/book-detail/index",
+    "pages/index/advance-search/index",
+    "pages/index/search-result/index",
+    "pages/home/my",
+    "pages/home/qcode/index",
+    "pages/home/service/my-dzbdjb",
+    "pages/home/borrow/index",
+    "pages/home/personal/index",
+    "pages/home/personal/editPersonal/index",
+    "pages/home/personal/modifyPwd/index",
+    "pages/template/layer",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "广州图书馆",
+    "navigationBarTextStyle":"black"
+  },
+   "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [{
+       "pagePath": "pages/index/index",
+      "iconPath": "image/icon_ssk.png",
+      "selectedIconPath": "image/icon_smcur.png",
+      "text": "书目检索"
+    },{
+       "pagePath": "pages/home/my",
+      "iconPath": "image/icon_hdgg.png",
+      "selectedIconPath": "image/icon_hdggcur.png",
+      "text": "个人中心"
+    },{
+      "pagePath": "pages/home/qcode/index",
+      "iconPath": "image/icon_API.png",
+      "selectedIconPath": "image/icon_API_HL.png",
+      "text": "电子证"
+    }]
+  },
+  "networkTimeout": {
+    "request": 15000,
+    "connectSocket": 15000,
+    "uploadFile": 15000,
+    "downloadFile": 15000
+  },
+  "debug": true
+}

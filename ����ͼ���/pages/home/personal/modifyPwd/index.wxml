@@ -1,0 +1,19 @@
+<!--pages/home/personal/modifyPwd/index.wxml-->
+<import src="../../../template/layer.wxml"/>
+<view class="page">
+    <template  is="layer" data="{{...layerinfo}}" />
+    <view class="input-container">
+        <block wx:for-items="{{editContent}}" wx:for-item="content">
+            <view class="input-list">
+                <view class="label">{{content.label}}</view>
+                <view class="input-area">
+                    <input password data-cur-index="{{index}}" bindinput="onInputChange" value="{{content.value}}" placeholder="请输入{{content.label}}" />
+                </view>
+                <view class="{{index < editContent.length-1 ? 'input-line' : ''}}"></view>
+            </view>
+        </block>
+    </view>
+    <view class="submit-btn">
+        <button bindtap="onSubmitPress">确认</button>
+    </view>
+</view>

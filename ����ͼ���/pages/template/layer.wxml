@@ -1,0 +1,15 @@
+<!--pages/template/layer.wxml-->
+<!--<template  is="layer" data="{{...layerinfo}}" />-->
+<template name="layer">
+  <view class="layer-container" hidden="{{!show}}">
+    <view class="layer-content">
+        <view class="layer-{{atype}}">
+            <image src="{{img}}"></image>
+            <!--<icon type="cancel" size="40" color="#ccc"></icon>-->
+        </view>
+        <view class="layer-content-text">
+            <text>{{text}}</text>
+        </view>
+    </view>
+  </view>
+</template>

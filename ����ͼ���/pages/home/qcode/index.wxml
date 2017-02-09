@@ -1,0 +1,28 @@
+<!--pages/home/qcode/index.wxml-->
+<import src="../../template/layer.wxml"/>
+<view class="page">
+        <template  is="layer" data="{{...layerinfo}}" />
+    <modal title="提示" confirm-text="确定" cancel-text="取消" hidden="{{modalHidden}}" mask bindconfirm="modalChangeConfirm" bindcancel="modalChangeCancel">
+      您还没有绑定读者证证，是否绑定？
+    </modal>
+    <loading hidden="{{loadingHidden}}">
+        加载中...
+    </loading>
+    <view></view>
+    <view class="qrcode-container">
+        <view class="qrcode-wrapper">
+            <view class="company-logo">
+                <image src="/image/company-logo.jpg"></image>
+            </view>
+            <view class="qrcode-content">
+                <view class="qcode">
+                    <image src="{{qcode}}"></image>
+                </view>
+                <view class="refresh">
+                    <!--<button class="qcode_btn" bindtap="refreshQcode">刷新</button>-->
+                    该二维码仅限个人使用，请妥善保管
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
